@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>For My Love ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Music -->
+  <audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Page 1 - Intro -->
+  <section class="page active" id="page1">
+    <h1>Hey Beautiful ❤️</h1>
+    <p>Tap below to enter your birthday surprise</p>
+    <button onclick="nextPage()">Enter 💌</button>
+  </section>
+
+  <!-- Page 2 - Password -->
+  <section class="page" id="page2">
+    <h2>Only for my special girl 🔐</h2>
+    <input type="password" id="password" placeholder="Your nickname">
+    <button onclick="checkPassword()">Unlock ❤️</button>
+    <p id="error"></p>
+  </section>
+
+  <!-- Page 3 - Typing Love Message -->
+  <section class="page" id="page3">
+    <h2 id="typing"></h2>
+    <button onclick="nextPage()">Continue ➡️</button>
+  </section>
+
+  <!-- Page 4 - Reasons -->
+  <section class="page" id="page4">
+    <h2>Why I Love You 💖</h2>
+    <p id="reasonBox">Click below...</p>
+    <button onclick="showReason()">Tell Me 💕</button>
+    <button onclick="nextPage()">Next 💞</button>
+  </section>
+
+  <!-- Page 5 - Gallery -->
+  <section class="page" id="page5">
+    <h2>Our Memories 📸</h2>
+    <div class="slider">
+      <img id="sliderImage" src="images/photo1.JPG">
+    </div>
+    <button onclick="changeImage()">Next Memory 💗</button>
+    <button onclick="nextPage()">Final Surprise 🎁</button>
+  </section>
+
+  <!-- Page 6 - Final Surprise -->
+  <section class="page" id="page6">
+    <h1>Happy Birthday My Mumu 🎂❤️</h1>
+    <button onclick="showModal()">Open My Heart 💌</button>
+  </section>
+
+  <!-- Modal -->
+  <div id="loveModal" class="modal">
+    <div class="modal-content">
+      <span onclick="closeModal()" class="close">&times;</span>
+      <h2>Forever Yours 💍</h2>
+      <p>
+        I promise to love you in every lifetime.
+        You are my today, tomorrow, and always.
+      </p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
