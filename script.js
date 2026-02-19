@@ -34,7 +34,7 @@ function checkPassword() {
     const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
     errorBox.innerText =
-      `Surprise unlock hone mein ${hours}h ${minutes}m ${seconds}s baaki hai ❤️`;
+      `Surprise unlock hone mein ${hours}h ${minutes}m ${seconds}s baaki hai  ❤️`;
   }
 }
 
