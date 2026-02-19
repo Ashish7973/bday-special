@@ -10,14 +10,34 @@ function nextPage() {
 }
 
 function checkPassword() {
-  const pass = document.getElementById("password").value;
-  if (pass.toLowerCase() === "mumu") {
+  const pass = document.getElementById("password").value.toLowerCase();
+  const errorBox = document.getElementById("error");
+
+  const now = new Date();
+
+  // 🔥 SET HER EXACT BIRTHDAY DATE HERE
+  const unlockTime = new Date("2026-02-20T00:00:00");
+
+  if (pass !== "mumu") {
+    errorBox.innerText = "Sirf meri Mumu hi enter kar sakti hai ❤️";
+    return;
+  }
+
+  if (now >= unlockTime) {
     nextPage();
     typeText();
   } else {
-    document.getElementById("error").innerText = "Wrong baby 😜 try again";
+    const timeLeft = unlockTime - now;
+
+    const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+    errorBox.innerText =
+      `Surprise unlock hone mein ${hours}h ${minutes}m ${seconds}s baaki hai ❤️`;
   }
 }
+
 
 function typeText() {
   const text = "From the moment I met you, my world changed forever ❤️";
